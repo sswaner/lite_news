@@ -45,20 +45,20 @@ def load_item(item):
     command = input("(m)enu, (p)rev, (n)ext, number, or exit: ")
     return command
 
-
-last_item = 0
-while command != 'exit':
-    if command.lower() == 'm':
-        show_menu()
-        command = input("Article: ")
-    elif command.lower() == 'n':
-        command = str(last_item + 1)
-    elif command.lower() == 'p':
-        command = str(last_item - 1)
-    else:
-        try:
-            option = int(command)
-        except:
-            break
-        last_item = option
-        command = load_item(command)
+if __name__ == '__main__': 
+    last_item = 0
+    while command != 'exit':
+        if command.lower() == 'm':
+            show_menu()
+            command = input("Article: ")
+        elif command.lower() == 'n':
+            command = str(last_item + 1)
+        elif command.lower() == 'p':
+            command = str(last_item - 1)
+        else:
+            try:
+                option = int(command)
+            except:
+                break
+            last_item = option
+            command = load_item(command)
